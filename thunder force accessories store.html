@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thunder Accessories Store</title>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_LIVE_CLIENT_ID&currency=USD&intent=capture"></script>
+<style>
+body{font-family: Arial,sans-serif; margin:0; padding:0; text-align:center;}
+nav{background:#222; color:#fff; padding:10px;}
+nav a{color:#fff; margin:0 10px; text-decoration:none;}
+.wrap{padding:20px;}
+.product{border:1px solid #ddd; padding:20px; margin:20px; border-radius:10px; display:inline-block; width:250px;}
+button{background:#28a745; color:#fff; border:none; padding:10px 15px; border-radius:5px; cursor:pointer;}
+button:hover{background:#218838;}
+form{margin-top:20px; border:1px solid #ccc; padding:20px; border-radius:10px; display:inline-block; text-align:left;}
+input, select{padding:8px; width:100%; margin-bottom:10px; border-radius:5px; border:1px solid #ccc;}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#car">Car Parts</a>
+<a href="#electronics">Electronics & Gadgets</a>
+<a href="#games">Game Equipment</a>
+<a href="#order">Order</a>
+<a href="#search">Search</a>
+</nav>
+
+<div class="wrap">
+<h1>Thunder Accessories Store</h1>
+<p>Powered by <strong>Thunder Force International Company</strong></p>
+
+<section id="car">
+<h2>Car Accessories & Parts</h2>
+<div class="product">
+<h3>Universal Car Phone Holder</h3>
+<p>Price: $25</p>
+<div id="paypal-car-1"></div>
+</div>
+<div class="product">
+<h3>LED Car Headlights</h3>
+<p>Price: $50</p>
+<div id="paypal-car-2"></div>
+</div>
+</section>
+
+<section id="electronics">
+<h2>Electronics & Gadgets</h2>
+<div class="product">
+<h3>Wireless Earbuds</h3>
+<p>Price: $35</p>
+<div id="paypal-electronics-1"></div>
+</div>
+<div class="product">
+<h3>Smartwatch</h3>
+<p>Price: $80</p>
+<div id="paypal-electronics-2"></div>
+</div>
+</section>
+
+<section id="games">
+<h2>Game Equipment</h2>
+<div class="product">
+<h3>Gaming Controller</h3>
+<p>Price: $40</p>
+<div id="paypal-game-1"></div>
+</div>
+<div class="product">
+<h3>Gaming Headset</h3>
+<p>Price: $60</p>
+<div id="paypal-game-2"></div>
+</div>
+</section>
+
+<section id="order">
+<h2>Place Your Order</h2>
+<form id="orderForm">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required>
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required>
+<label for="phone">Phone</label>
+<input type="text" id="phone" name="phone" required>
+<label for="product">Product</label>
+<select id="product" name="product" required>
+<option value="Universal Car Phone Holder">Universal Car Phone Holder</option>
+<option value="LED Car Headlights">LED Car Headlights</option>
+<option value="Wireless Earbuds">Wireless Earbuds</option>
+<option value="Smartwatch">Smartwatch</option>
+<option value="Gaming Controller">Gaming Controller</option>
+<option value="Gaming Headset">Gaming Headset</option>
+</select>
+<label for="quantity">Quantity</label>
+<input type="number" id="quantity" name="quantity" value="1" min="1" required>
+<label for="destination">Delivery Address</label>
+<input type="text" id="destination" name="destination" placeholder="Enter full address" required>
+<button type="submit">Submit Order</button>
+</form>
+</section>
+
+<section id="search">
+<h2>Search for Other Products</h2>
+<input type="text" id="searchQuery" placeholder="Type product name">
+<button id="searchBtn">Search</button>
+<div id="searchResults"></div>
+</section>
+
+</div>
+
+<script>
+const OWNER_EMAIL = 'thunderforceinternational@gmail.com';
+const PAYPAL_EMAIL = 'wambugunjoki1@gmail.com';
+
+function createPaypalButton(containerId, productName, price){
+paypal.Buttons({
+createOrder: function(data, actions){
+return actions.order.create({purchase_units:[{description: productName, amount:{value: price}, payee:{email_address: PAYPAL_EMAIL}}]});
+},
+onApprove: function(data, actions){
+return actions.order.capture().then(function(details){
+alert('Transaction completed by '+details.payer.name.given_name+'!');
+const subject = `New Order: ${productName}`;
+const body = `Customer: ${details.payer.name.given_name} ${details.payer.name.surname}\nEmail: ${details.payer.email_address}\nAmount Paid: $${details.purchase_units[0].amount.value}\nTransaction ID: ${details.id}`;
+window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+}
+}).render(`#${containerId}`);
+}
+
+// Initialize PayPal buttons
+createPaypalButton('paypal-car-1','Universal Car Phone Holder','25.00');
+createPaypalButton('paypal-car-2','LED Car Headlights','50.00');
+createPaypalButton('paypal-electronics-1','Wireless Earbuds','35.00');
+createPaypalButton('paypal-electronics-2','Smartwatch','80.00');
+createPaypalButton('paypal-game-1','Gaming Controller','40.00');
+createPaypalButton('paypal-game-2','Gaming Headset','60.00');
+
+// Order form submission
+document.getElementById('orderForm').addEventListener('submit', function(e){
+e.preventDefault();
+const data = new FormData(e.target);
+const lines = [];
+for(const [k,v] of data.entries()) lines.push(`${k}: ${v}`);
+const subject = `New Order – ${data.get('product')}`;
+const body = lines.join('\n');
+window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+alert('Order submitted! Proceed to payment.');
+});
+
+// Simple AI search placeholder
+document.getElementById('searchBtn').addEventListener('click', function(){
+const query = document.getElementById('searchQuery').value.trim();
+if(!query) return;
+const aliPrice = Math.floor(Math.random()*100)+10; // random demo price
+const finalPrice = (aliPrice*1.03 + 5).toFixed(2); // +3% commission + $5 shipping
+const resultsDiv = document.getElementById('searchResults');
+resultsDiv.innerHTML = `<p>Found "${query}" online. Price: $${aliPrice} + 3% commission + $5 shipping = <strong>$${finalPrice}</strong></p><button onclick="alert('Redirect to supplier checkout')">Buy Now</button>`;
+});
+</script>
+
+</body>
+</html>

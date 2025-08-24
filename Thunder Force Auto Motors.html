@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thunder Auto Imports — Thunder Force International</title>
+<meta name="description" content="Thunder Auto Imports — premium cars to Kenya. Contact via WhatsApp +254736985536 or thunderforceinternational@gmail.com" />
+<style>
+  :root{--bg:#f4f6f8;--card:#fff;--muted:#556;--accent:#0b63d6;--wa:#25D366}
+  *{box-sizing:border-box}
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:#111}
+  header{background:#071330;color:#fff;padding:18px 12px}
+  .wrap{max-width:1100px;margin:0 auto}
+  .brand{display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap}
+  .brand .title{font-weight:800;font-size:20px}
+  .contacts{font-size:14px}
+  .contacts a{color:#fff;text-decoration:none;margin-left:10px}
+  nav{background:#0b2036;padding:8px}
+  nav .links{max-width:1100px;margin:0 auto;display:flex;gap:12px;justify-content:flex-start;flex-wrap:wrap}
+  nav a{color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px}
+  nav a:hover{background:#102a45}
+  main.wrap{padding:22px}
+  h1{margin:0 0 8px;font-size:26px}
+  p.lead{color:var(--muted);margin:0 0 18px}
+  .cars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+  .card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(15,23,42,.06);display:flex;flex-direction:column}
+  .card img{width:100%;height:160px;object-fit:cover;display:block}
+  .card .body{padding:12px;flex:1 1 auto}
+  .card h3{margin:0 0 8px;font-size:18px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  .card .buy{margin-top:12px;display:inline-block;background:var(--wa);color:#fff;padding:10px 12px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;font-weight:700}
+  .card .buy:hover{filter:brightness(.95)}
+  section.form-section{margin-top:26px;background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,.04)}
+  form .row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  form .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  label{font-size:13px;color:#333;margin-top:8px;display:block}
+  input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #d0d7de;background:#fff}
+  textarea{min-height:90px;resize:vertical}
+  .submit-row{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
+  button.primary{background:var(--accent);color:#fff;border:none;padding:12px 16px;border-radius:10px;cursor:pointer;font-weight:700}
+  button.ghost{background:#fff;border:1px solid #d0d7de;padding:12px 14px;border-radius:10px;cursor:pointer}
+  footer{padding:20px;text-align:center;color:var(--muted);font-size:14px;margin-top:30px}
+  .note{font-size:13px;color:#445; margin-top:10px}
+  @media (max-width:720px){ form .row{grid-template-columns:1fr} form .row3{grid-template-columns:1fr} .brand{flex-direction:column;align-items:flex-start} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap brand">
+    <div>
+      <div class="title">Thunder Force International — Thunder Auto Imports</div>
+      <div style="font-size:13px;color:#cde">Launch: Nov 2, 2025</div>
+    </div>
+    <div class="contacts" aria-label="Contact">
+      <!-- Visible business contact info -->
+      <strong>Email:</strong> <a href="mailto:thunderforceinternational@gmail.com">thunderforceinternational@gmail.com</a>
+      <strong style="margin-left:12px">WhatsApp:</strong>
+      <a href="https://wa.me/254736985536" target="_blank" rel="noopener">+254 736 985 536</a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="links wrap">
+    <a href="#catalog">Catalog</a>
+    <a href="#form">Secure Purchase Form</a>
+    <a href="#request">Custom Request</a>
+    <a href="#security">Security</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header style="margin-bottom:12px">
+    <h1 id="catalog">Thunder Auto Imports — Catalog</h1>
+    <p class="lead">Choose from curated high-demand vehicles. Click <strong>Buy</strong> → fill the secure verification form → we will contact you via WhatsApp and email.</p>
+  </header>
+
+  <!-- Cars grid (15 cars) -->
+  <section class="cars-grid" aria-label="Car catalog">
+    <!-- 1 -->
+    <article class="card" data-model="Mercedes G-Class (G-Wagon)">
+      <img src="https://www.mercedes-benz.com/en/vehicles/passenger-cars/g-class/_jcr_content/image/MQ6-12-image-20190621150501/mercedes-benz-g-class-463-2560x1440.jpeg" alt="Mercedes G-Wagon">
+      <div class="body">
+        <h3>Mercedes G-Class (G-Wagon)</h3>
+        <p>Iconic luxury 4x4 — AMG & non-AMG options.</p>
+        <button class="buy" onclick="selectCar('Mercedes G-Class (G-Wagon)')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="card" data-model="Toyota Land Cruiser V8">
+      <img src="https://www.toyota-global.com/showroom/toyota_car_library/land_cruiser/gallery/images/landcruiser_gallery_01.jpg" alt="Toyota Land Cruiser">
+      <div class="body">
+        <h3>Toyota Land Cruiser V8</h3>
+        <p>Legendary durability for African terrain.</p>
+        <button class="buy" onclick="selectCar('Toyota Land Cruiser V8')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="card" data-model="Range Rover Vogue / Sport">
+      <img src="https://cdn.motor1.com/images/mgl/3ANpL/s1/2022-land-rover-range-rover.jpg" alt="Range Rover">
+      <div class="body">
+        <h3>Range Rover Vogue / Sport</h3>
+        <p>Flagship comfort with off-road capability.</p>
+        <button class="buy" onclick="selectCar('Range Rover Vogue / Sport')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="card" data-model="Lexus LX 570 / LX600">
+      <img src="https://www.lexus.com/cm-img/models/lx/lx_gallery_01.jpg" alt="Lexus LX">
+      <div class="body">
+        <h3>Lexus LX 570 / LX600</h3>
+        <p>Luxury + Toyota reliability.</p>
+        <button class="buy" onclick="selectCar('Lexus LX 570 / LX600')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card" data-model="Toyota Prado">
+      <img src="https://cdn.motor1.com/images/mgl/Xq3bL/s1/toyota-land-cruiser-prado.jpg" alt="Toyota Prado">
+      <div class="body">
+        <h3>Toyota Prado</h3>
+        <p>Trusted mid-size 4x4 — popular in Kenya.</p>
+        <button class="buy" onclick="selectCar('Toyota Prado')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card" data-model="Nissan Patrol">
+      <img src="https://www.nissan-global.com/EN/IMAGES/2022/nissan-patrol-hero.jpg" alt="Nissan Patrol">
+      <div class="body">
+        <h3>Nissan Patrol</h3>
+        <p>Full-size 4x4 with powerful engine options.</p>
+        <button class="buy" onclick="selectCar('Nissan Patrol')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card" data-model="Toyota Hilux">
+      <img src="https://media.ed.edmunds-media.com/toyota/hilux/2020/oem/2020_toyota_hilux_crew-cab_trd_pro_fq_oem_1_1600.jpg" alt="Toyota Hilux">
+      <div class="body">
+        <h3>Toyota Hilux</h3>
+        <p>Reliable pickup — ideal for business and farms.</p>
+        <button class="buy" onclick="selectCar('Toyota Hilux')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="card" data-model="Ford Ranger (incl. Raptor)">
+      <img src="https://www.ford.com/cmslibs/content/dam/brand_ford/en_us/brand/trucks/ranger/2023/collections/3-2/22_FRD_RSA_M2_Rev.jpg" alt="Ford Ranger">
+      <div class="body">
+        <h3>Ford Ranger (incl. Raptor)</h3>
+        <p>Strong torque and capability for heavy use.</p>
+        <button class="buy" onclick="selectCar('Ford Ranger (incl. Raptor)')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card" data-model="BMW X7">
+      <img src="https://cdn.bmwblog.com/wp-content/uploads/2021/08/2022-bmw-x7-m60i-04.jpg" alt="BMW X7">
+      <div class="body">
+        <h3>BMW X7</h3>
+        <p>Spacious premium SUV with dynamic handling.</p>
+        <button class="buy" onclick="selectCar('BMW X7')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card" data-model="Mercedes E-Class">
+      <img src="https://media.ed.edmunds-media.com/mercedes-benz/e-class/2021/oem/2021_mercedes-benz_e-class_sedan_angularfront_oem_1_1600.jpg" alt="Mercedes E-Class">
+      <div class="body">
+        <h3>Mercedes-Benz E-Class</h3>
+        <p>Executive sedan — luxury and comfort.</p>
+        <button class="buy" onclick="selectCar('Mercedes-Benz E-Class')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="card" data-model="BMW M3">
+      <img src="https://cdn.motor1.com/images/mgl/9xqz9/s3/nissan-gtr-nismo-2020.jpg" alt="BMW M3">
+      <div class="body">
+        <h3>BMW M3</h3>
+        <p>Performance sedan — track-capable and refined.</p>
+        <button class="buy" onclick="selectCar('BMW M3')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 12 -->
+    <article class="card" data-model="Porsche 911">
+      <img src="https://cdn.motor1.com/images/mgl/eoZbJ/s3/2020-porsche-911.jpg" alt="Porsche 911">
+      <div class="body">
+        <h3>Porsche 911</h3>
+        <p>Iconic sports car with exceptional dynamics.</p>
+        <button class="buy" onclick="selectCar('Porsche 911')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 13 -->
+    <article class="card" data-model="Tesla Model 3">
+      <img src="https://tesla-cdn.thron.com/delivery/public/image/tesla/3eac0510-2021-4f79-9e1c-93438e7a71a6/bvlatuR/std/2880x1800/_25-Hero-D" alt="Tesla Model 3">
+      <div class="body">
+        <h3>Tesla Model 3</h3>
+        <p>Popular long-range electric sedan.</p>
+        <button class="buy" onclick="selectCar('Tesla Model 3')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 14 -->
+    <article class="card" data-model="Rolls-Royce Phantom">
+      <img src="https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycecars/bespoke-commissions/phantom/rr-phantom-hero.jpg" alt="Rolls-Royce Phantom">
+      <div class="body">
+        <h3>Rolls-Royce Phantom</h3>
+        <p>Ultimate luxury sedan with bespoke options.</p>
+        <button class="buy" onclick="selectCar('Rolls-Royce Phantom')">Buy</button>
+      </div>
+    </article>
+
+    <!-- 15 -->
+    <article class="card" data-model="Lamborghini Huracan">
+      <img src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/models/huracan/huracan-evo/rwd/huracan-evo-rwd-hero.jpg" alt="Lamborghini Huracan">
+      <div class="body">
+        <h3>Lamborghini Huracan</h3>
+        <p>Exotic supercar — extreme performance and design.</p>
+        <button class="buy" onclick="selectCar('Lamborghini Huracan')">Buy</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- Secure Purchase Form (required for ALL customers) -->
+  <section id="form" class="form-section" aria-labelledby="formHeading">
+    <h2 id="formHeading">Secure Purchase Form (Required)</h2>
+    <p class="note">Even if you clicked Buy on a listed car, please complete this form. Details will be sent to our WhatsApp and email for verification and follow-up.</p>
+
+    <form id="purchaseForm" onsubmit="handleSubmit(event)" autocomplete="on">
+      <input type="hidden" id="selectedCar" name="selectedCar" value="">
+
+      <div class="row">
+        <div>
+          <label for="fullname">Full name <span style="color:#c00">*</span></label>
+          <input id="fullname" name="fullname" required placeholder="John Doe">
+        </div>
+        <div>
+          <label for="email">Gmail (used for verification) <span style="color:#c00">*</span></label>
+          <input id="email" name="email" type="email" required placeholder="you@gmail.com">
+        </div>
+      </div>
+
+      <div class="row3" style="margin-top:8px">
+        <div>
+          <label for="phone">Mobile (WhatsApp) <span style="color:#c00">*</span></label>
+          <input id="phone" name="phone" type="tel" required placeholder="+2547xxxxxxxx">
+        </div>
+        <div>
+          <label for="country">Country <span style="color:#c00">*</span></label>
+          <input id="country" name="country" required placeholder="Kenya">
+        </div>
+        <div>
+          <label for="idno">ID / Passport No. <span style="color:#c00">*</span></label>
+          <input id="idno" name="idno" required placeholder="ID or Passport number">
+        </div>
+      </div>
+
+      <label for="notes">Notes (optional) — budget, preferred years, color, trim, etc.</label>
+      <textarea id="notes" name="notes" placeholder="e.g., Budget: $35k-45k; Year: 2018-2022; Color: Black"></textarea>
+
+      <div class="submit-row">
+        <button type="submit" class="primary">Send details via WhatsApp & Email</button>
+        <button type="button" class="ghost" onclick="clearForm()">Clear</button>
+      </div>
+
+      <p class="note">By submitting you confirm these details are accurate. We do not store your data on this website — details are sent to our WhatsApp and to <strong><a href="mailto:thunderforceinternational@gmail.com">thunderforceinternational@gmail.com</a></strong>.</p>
+    </form>
+  </section>
+
+  <!-- Custom Request (also sends to WA + Email) -->
+  <section id="request" class="form-section" style="margin-top:18px">
+    <h2>Custom Request — If your car isn't listed</h2>
+    <p class="note">Tell us brand & model, and we will source it. We will contact you on WhatsApp and email with ETA & pricing.</p>
+
+    <form id="requestForm" onsubmit="handleRequest(event)">
+      <div class="row">
+        <div>
+          <label for="r_name">Full name <span style="color:#c00">*</span></label>
+          <input id="r_name" required>
+        </div>
+        <div>
+          <label for="r_email">Gmail <span style="color:#c00">*</span></label>
+          <input id="r_email" type="email" required>
+        </div>
+      </div>
+
+      <div class="row3" style="margin-top:8px">
+        <div>
+          <label for="r_phone">Mobile (WhatsApp) <span style="color:#c00">*</span></label>
+          <input id="r_phone" required placeholder="+2547...">
+        </div>
+        <div>
+          <label for="r_country">Country <span style="color:#c00">*</span></label>
+          <input id="r_country" required>
+        </div>
+        <div>
+          <label for="r_id">ID / Passport No. <span style="color:#c00">*</span></label>
+          <input id="r_id" required>
+        </div>
+      </div>
+
+      <label for="r_car">Car Brand & Model (required)</label>
+      <input id="r_car" required placeholder="e.g., Audi Q7 2019">
+
+      <label for="r_notes">Notes (optional)</label>
+      <textarea id="r_notes" placeholder="Budget, year range, trim, condition..."></textarea>
+
+      <div class="submit-row" style="margin-top:10px">
+        <button type="submit" class="primary">Send Request via WhatsApp & Email</button>
+        <button type="button" class="ghost" onclick="clearRequestForm()">Clear</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="security" class="form-section" style="margin-top:18px">
+    <h2>Security & Privacy</h2>
+    <p class="note">We require identity verification fields (Full name, WhatsApp phone, Gmail, ID/Passport No., Country) to protect buyers and sellers from fraud. We do not store this information on this site — it is sent via WhatsApp and email for manual processing. If you prefer, contact us directly at <a href="mailto:thunderforceinternational@gmail.com">thunderforceinternational@gmail.com</a> or WhatsApp <a href="https://wa.me/254736985536">+254 736 985 536</a>.</p>
+  </section>
+
+  <section id="contact" style="margin-top:18px">
+    <h2>Contact</h2>
+    <p class="note">Email: <a href="mailto:thunderforceinternational@gmail.com">thunderforceinternational@gmail.com</a> &nbsp;•&nbsp; WhatsApp: <a href="https://wa.me/254736985536">+254 736 985 536</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2025 Thunder Force International • Thunder Auto Imports</div>
+</footer>
+
+<script>
+  // Business constants
+  const WA_NUMBER = "254736985536"; // WhatsApp number (no +)
+  const SALES_EMAIL = "thunderforceinternational@gmail.com";
+
+  // selectedCar is set when a user clicks Buy
+  function selectCar(carName){
+    // set hidden field and scroll to form
+    document.getElementById('selectedCar').value = carName;
+    document.getElementById('fullname').focus();
+    window.location.hash = "#form";
+    // Small visual hint
+    alert("Selected: " + carName + "\nPlease complete the Secure Purchase Form below to proceed.");
+  }
+
+  function clearForm(){
+    document.getElementById('purchaseForm').reset();
+    document.getElementById('selectedCar').value = "";
+  }
+
+  function clearRequestForm(){
+    document.getElementById('requestForm').reset();
+  }
+
+  // Compose message helpers
+  function composePurchaseMessage(data){
+    return `Hello Thunder Auto Imports — I want to buy: ${data.car}\n\nName: ${data.name}\nPhone: ${data.phone}\nGmail: ${data.email}\nCountry: ${data.country}\nID/Passport: ${data.id}\nNotes: ${data.notes || '(none)'}`
+  }
+
+  function composeRequestMessage(data){
+    return `Custom Car Request:\nWanted: ${data.car}\n\nName: ${data.name}\nPhone: ${data.phone}\nGmail: ${data.email}\nCountry: ${data.country}\nID/Passport: ${data.id}\nNotes: ${data.notes || '(none)'}`
+  }
+
+  // Form submit handler - opens WhatsApp and mailto
+  function handleSubmit(e){
+    e.preventDefault();
+    const car = (document.getElementById('selectedCar').value || "Not specified (user may have entered in notes)");
+    const name = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const country = document.getElementById('country').value.trim();
+    const idno = document.getElementById('idno').value.trim();
+    const notes = document.getElementById('notes').value.trim();
+
+    // basic validation
+    if(!name || !email || !phone || !country || !idno){
+      alert("Please complete all required fields.");
+      return;
+    }
+
+    const payload = {car, name, email, phone, country, id: idno, notes};
+
+    // 1) Open WhatsApp chat with prefilled message
+    const waText = encodeURIComponent(composePurchaseMessage(payload));
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${waText}`;
+    window.open(waUrl, '_blank');
+
+    // 2) Open default email client with mailto
+    const subject = encodeURIComponent(`Purchase Inquiry: ${car}`);
+    const body = encodeURIComponent(composePurchaseMessage(payload));
+    const mailto = `mailto:${SALES_EMAIL}?subject=${subject}&body=${body}`;
+    window.open(mailto, '_blank');
+
+    // Provide confirmation in UI
+    alert("Your details were prepared for WhatsApp and email. We'll contact you shortly.");
+    document.getElementById('purchaseForm').reset();
+    document.getElementById('selectedCar').value = "";
+  }
+
+  // Custom request submit handler
+  function handleRequest(e){
+    e.preventDefault();
+    const car = document.getElementById('r_car').value.trim();
+    const name = document.getElementById('r_name').value.trim();
+    const email = document.getElementById('r_email').value.trim();
+    const phone = document.getElementById('r_phone').value.trim();
+    const country = document.getElementById('r_country').value.trim();
+    const idno = document.getElementById('r_id').value.trim();
+    const notes = document.getElementById('r_notes').value.trim();
+
+    if(!car || !name || !email || !phone || !country || !idno){
+      alert("Please complete all required fields.");
+      return;
+    }
+
+    const payload = {car, name, email, phone, country, id: idno, notes};
+
+    // WhatsApp
+    const waText = encodeURIComponent(composeRequestMessage(payload));
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${waText}`;
+    window.open(waUrl, '_blank');
+
+    // Email
+    const subject = encodeURIComponent(`Custom Car Request: ${car}`);
+    const body = encodeURIComponent(composeRequestMessage(payload));
+    const mailto = `mailto:${SALES_EMAIL}?subject=${subject}&body=${body}`;
+    window.open(mailto, '_blank');
+
+    alert("Your custom request was sent via WhatsApp and email. We'll be in touch.");
+    clearRequestForm();
+  }
+</script>
+</body>
+</html>
